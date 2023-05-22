@@ -1,12 +1,12 @@
 package com.lab.task.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Meal {
@@ -17,8 +17,9 @@ public class Meal {
 	private double price;
 	
 	@ManyToOne
-	@JoinColumn(name="restaurant")
+	@JoinColumn(name="restaurantId")
 	private Restaurant fk_restaurantId;
+	
 	public void setId(int id) {
 		this.id = id;
 	}

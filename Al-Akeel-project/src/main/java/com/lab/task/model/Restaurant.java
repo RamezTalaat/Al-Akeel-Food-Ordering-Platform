@@ -1,9 +1,11 @@
 package com.lab.task.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,27 +18,27 @@ public class Restaurant {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	//@OneToMany(mappedBy = "fk_restaurantId")
 	private int id;
 	private String name;
-	
-	//@OneToOne
-	//@JoinColumn(name="owner")
 	private int ownerId;
 	
-	@OneToMany(mappedBy="fk_restaurantId")
+	@OneToMany(mappedBy = "fk_restaurantId")
 	private List<Order> listOfOrders;
 	
-	@OneToMany(mappedBy="fk_restaurantId")
+	@OneToMany(mappedBy = "fk_restaurantId", fetch = FetchType.EAGER)
 	private List<Meal> listOfMeals;
 	
 	public Restaurant() {
-		// TODO Auto-generated constructor stub
-		
+			
 	}
-	public List<Meal> getListOfMeals() {
-		return listOfMeals;
-	}
+	
+    public List<Meal> getListOfMeals() {
+        if (listOfMeals == null) {
+            listOfMeals = new ArrayList<>();
+        }
+        return listOfMeals;
+    }
+    
 	public int getId() {
 		return id;
 	}
@@ -56,11 +58,15 @@ public class Restaurant {
 		this.ownerId = ownerId;
 	}
 	public void addMeal(Meal meal) {
-		this.listOfMeals.add(meal);
+	    meal.setFk_restaurantId(this);
+	    this.listOfMeals.add(meal);
 	}
+
 	public boolean removeMeal(Meal meal) {
-		return this.listOfMeals.remove(meal);
+	    meal.setFk_restaurantId(null);
+	    return this.listOfMeals.remove(meal);
 	}
+
 
 	public void setListOfMeals(List<Meal> listOfMeals) {
 		this.listOfMeals = listOfMeals;
@@ -75,8 +81,4 @@ public class Restaurant {
 	public int getOwner() {
 		return this.ownerId;
 	}
-	
-	
-	
-	
 }

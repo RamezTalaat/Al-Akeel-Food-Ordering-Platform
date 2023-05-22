@@ -16,6 +16,7 @@ public class Order {
 	private int id;
 	private Vector<Meal> itemArray;
 	private double totalPrice;
+	
 	@ManyToOne
 	@JoinColumn(name="restaurantId")
 	private Restaurant fk_restaurantId;
@@ -24,6 +25,7 @@ public class Order {
 	@JoinColumn(name="runnerId")
 	private Runner fk_runnerId;
 	private OrderStatus orderStatus;
+	
 	public void setOrderStatus(OrderStatus orderStatus) {
 		this.orderStatus = orderStatus;
 	}
