@@ -25,7 +25,6 @@ public class Runner {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public int getId() {
 		return id;
 	}
@@ -43,6 +42,12 @@ public class Runner {
 	}
 	public void setDeliveryFees(double deliveryFees) {
 		this.deliveryFees = deliveryFees;
+	}
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void addOrder(Order order) {
+		orders.add(order);
 	}
 	
 }

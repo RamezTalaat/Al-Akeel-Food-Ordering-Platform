@@ -16,6 +16,8 @@ public class Order {
 	private int id;
 	private Vector<Meal> itemArray;
 	private double totalPrice;
+	private double totalAmount;
+	private OrderStatus Status = OrderStatus.preparing;
 	
 	@ManyToOne
 	@JoinColumn(name="restaurantId")
@@ -61,5 +63,17 @@ public class Order {
 	}
 	public void setRunnerId(Runner fk_runnerId) {
 		this.fk_runnerId = fk_runnerId;
+	}
+	public OrderStatus getStatus() {
+		return Status;
+	}
+	public void setStatus(OrderStatus status) {
+		Status = status;
+	}
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 }

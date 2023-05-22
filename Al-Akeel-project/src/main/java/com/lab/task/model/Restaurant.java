@@ -57,6 +57,9 @@ public class Restaurant {
 	public void setOwnerId(int ownerId) {
 		this.ownerId = ownerId;
 	}
+	public void setMenu(List<Meal> menu) {
+		this.listOfMeals=menu;
+	}
 	public void addMeal(Meal meal) {
 	    meal.setFk_restaurantId(this);
 	    this.listOfMeals.add(meal);
@@ -80,5 +83,8 @@ public class Restaurant {
 	}
 	public int getOwner() {
 		return this.ownerId;
+	}
+	public void editMenu(List<Meal> updatedMenu) {
+		   this.listOfMeals = updatedMenu;
 	}
 }
