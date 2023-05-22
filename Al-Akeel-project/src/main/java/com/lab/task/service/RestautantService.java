@@ -53,14 +53,14 @@ public class RestautantService {
     public String addRestaurant(Restaurant restaurant) {
     	//User owner = userdb.findUser(ownerid);
     	//return owner.getName();
-    	/*Restaurant temp = new Restaurant();
+    	Restaurant temp = new Restaurant();
     	temp.setName(restaurant.getName());
-    	temp.setOwner(owner);
+    	temp.setOwnerId(restaurant.getId());
     	List<Meal> listOfMeals = new ArrayList<Meal>();
     	List<Order> listOfOrders = new ArrayList<Order>();
     	temp.setListOfMeals(listOfMeals);
-    	temp.setListOfOrders(listOfOrders);*/
-    	restdb.addRestaurant(restaurant);
+    	temp.setListOfOrders(listOfOrders);
+    	restdb.addRestaurant(temp);
     	return "restaurant " +  restaurant.getName()+" added successfully";
     	
     	//int userID = restaurant.getOwnerId();
