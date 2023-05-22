@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "44e2e2ce-cc6c-4f75-8fdb-e56ad5246a2f",
+		"name": "Al Akeel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"ramez\",\n\"password\":\"1111\",\n\"Role\":\"Customer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/userService/addUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"userService",
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/userService/getUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"userService",
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"macdonalds\",\n\"ownerId\":{\n    \"id\":1,\n    \"name\":\"ramez\",\n    \"password\":\"1111\",\n    \"Role\":\"Customer\"\n},\n\"listOfOrders\":[],\n\"listOfMeals\":[]\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/restaurantService/addRestaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"restaurantService",
+						"addRestaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Restaurnat By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/restaurantService/getRestaurantByID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"restaurantService",
+						"getRestaurantByID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/restaurantService/getRestaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"restaurantService",
+						"getRestaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"totalPrice\":\"6.6\",\n    \"OrderStatus\":\"being processed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/orderService/addOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"orderService",
+						"addOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/orderService/getOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"orderService",
+						"getOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Runner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/orderService/addRunner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"orderService",
+						"addRunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Runners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/restaurantService/getRunners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"restaurantService",
+						"getRunners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deliver order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/runnerService/addRunner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"runnerService",
+						"addRunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Completed Trips",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enterprise-java-task/api/runnerService/getCompletedTrips/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enterprise-java-task",
+						"api",
+						"runnerService",
+						"getCompletedTrips",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
